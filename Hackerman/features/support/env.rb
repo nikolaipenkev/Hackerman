@@ -1,17 +1,10 @@
-  # frozen_string_literal: true
+# features/support/env.rb
+require 'capybara/cucumber'
+require 'selenium-webdriver'
 
-require 'rspec'
-require 'tmpdir'
-require_relative '../../helpers/allure_helper'
+# Configure Capybara to use Selenium with Chrome browser
+Capybara.default_driver = :selenium_chrome
+Capybara.app_host = 'https://natpoho.github.io/Hackathon_Github/' # Adjust to your local server
 
-Before do
-  driver.manage.window.maximize
-end
-
-After do |scenario|
-  Dir.mktmpdir do |temp_folder|
-    screenshot = driver.save_screenshot("#{temp_folder}/#{scenario.name}.png")
-    AllureHelper.add_screenshot(scenario.name, screenshot)
-  end
-  driver.quit
-end
+# Optional: Increase default wait time
+Capybara.default_max_wait_time = 5

@@ -11,5 +11,6 @@ gem 'cucumber'
 gem 'rspec'
 gem 'rubocop'
 gem 'ruby_raider', '~> 1.0.0'
+gem 'capybara'
 
 gem 'selenium-webdriver'
