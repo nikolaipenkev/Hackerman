@@ -1,0 +1,16 @@
+browser: :chrome
+url: 'https://natpoho.github.io/'
+
+driver_options:
+  :timeouts:
+    :implicit: 10000 # 10 seconds
+
+browser_arguments:
+  :chrome:
+    - no-sandbox
+    - disable-dev-shm-usage
+    - ignore-certificate-errors
+    - search-engine-choice-country
+  :firefox:
+    - acceptInsecureCerts
+    - no-sandbox
